@@ -36,6 +36,18 @@ if __name__ == "__main__":
         trie.put(word, i)
 
     # Перевірка кількості слів, що закінчуються на заданий суфікс
+    assert trie.count_words_with_suffix("e") == 1  # apple
+    assert trie.count_words_with_suffix("ion") == 1  # application
+    assert trie.count_words_with_suffix("a") == 1  # banana
+    assert trie.count_words_with_suffix("at") == 1  # cat
+
+    # Перевірка наявності префікса
+    assert trie.has_prefix("app") == True  # apple, application
+    assert trie.has_prefix("bat") == False
+    assert trie.has_prefix("ban") == True  # banana
+    assert trie.has_prefix("ca") == True  # cat
+
+    # Перевірка кількості слів, що закінчуються на заданий суфікс
     print("Words ending with 'e':", trie.count_words_with_suffix("e"))  # apple
     print(
         "Words ending with 'ion':", trie.count_words_with_suffix("ion")
